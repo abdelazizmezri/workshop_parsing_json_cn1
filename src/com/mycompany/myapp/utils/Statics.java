@@ -11,6 +11,6 @@ package com.mycompany.myapp.utils;
  */
 public class Statics {
     
-    public static final String BASE_URL="http://51.89.167.87:4000/";
+    public static final String BASE_URL="http://localhost:3000/";
     
 }
