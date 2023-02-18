@@ -43,13 +43,15 @@ public class ServiceTask {
 
     public boolean addTask(Task t) {
 
+        String name = t.getName();
+        int status =  t.getStatus();
+        
         //String url = Statics.BASE_URL + "create?name=" + t.getName() + "&status=" + t.getStatus();
-        String url = Statics.BASE_URL + "create";
+        String url = Statics.BASE_URL + "create/" + status + "/" + name;
 
         req.setUrl(url);
         req.setPost(false);
-        req.addArgument("name", t.getName());
-        req.addArgument("status", t.getStatus() + "");
+        
         req.addResponseListener(new ActionListener<NetworkEvent>() {
             @Override
             public void actionPerformed(NetworkEvent evt) {
